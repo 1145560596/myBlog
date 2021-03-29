@@ -72,13 +72,13 @@ public class BlogController {
                        @RequestParam("blogCoverImage") String blogCoverImage,
                        @RequestParam("blogStatus") Integer blogStatus,
                        @RequestParam("enableComment") Integer enableComment) {
-        if (org.springframework.util.StringUtils.isEmpty(blogTitle)) {
+        if (StringUtils.isEmpty(blogTitle)) {
             return ResultGenerator.getFailResult("请输入文章标题");
         }
         if (blogTitle.trim().length() > 150) {
             return ResultGenerator.getFailResult("标题过长");
         }
-        if (org.springframework.util.StringUtils.isEmpty(blogTags)) {
+        if (StringUtils.isEmpty(blogTags)) {
             return ResultGenerator.getFailResult("请输入文章标签");
         }
         if (blogTags.trim().length() > 150) {
@@ -87,13 +87,13 @@ public class BlogController {
         if (blogSubUrl.trim().length() > 150) {
             return ResultGenerator.getFailResult("路径过长");
         }
-        if (org.springframework.util.StringUtils.isEmpty(blogContent)) {
+        if (StringUtils.isEmpty(blogContent)) {
             return ResultGenerator.getFailResult("请输入文章内容");
         }
         if (blogTags.trim().length() > 100000) {
             return ResultGenerator.getFailResult("文章内容过长");
         }
-        if (org.springframework.util.StringUtils.isEmpty(blogCoverImage)) {
+        if (StringUtils.isEmpty(blogCoverImage)) {
             return ResultGenerator.getFailResult("封面图不能为空");
         }
         Blog blog = new Blog();
@@ -137,13 +137,13 @@ public class BlogController {
                        @RequestParam("blogCoverImage") String blogCoverImage,
                        @RequestParam("blogStatus") Integer blogStatus,
                        @RequestParam("enableComment") Integer enableComment) {
-        if (org.springframework.util.StringUtils.isEmpty(blogTitle)) {
+        if (StringUtils.isEmpty(blogTitle)) {
             return ResultGenerator.getFailResult("请输入文章标题");
         }
         if (blogTitle.trim().length() > 150) {
             return ResultGenerator.getFailResult("标题过长");
         }
-        if (org.springframework.util.StringUtils.isEmpty(blogTags)) {
+        if (StringUtils.isEmpty(blogTags)) {
             return ResultGenerator.getFailResult("请输入文章标签");
         }
         if (blogTags.trim().length() > 150) {
@@ -152,13 +152,13 @@ public class BlogController {
         if (blogSubUrl.trim().length() > 150) {
             return ResultGenerator.getFailResult("路径过长");
         }
-        if (org.springframework.util.StringUtils.isEmpty(blogContent)) {
+        if (StringUtils.isEmpty(blogContent)) {
             return ResultGenerator.getFailResult("请输入文章内容");
         }
         if (blogTags.trim().length() > 100000) {
             return ResultGenerator.getFailResult("文章内容过长");
         }
-        if (org.springframework.util.StringUtils.isEmpty(blogCoverImage)) {
+        if (StringUtils.isEmpty(blogCoverImage)) {
             return ResultGenerator.getFailResult("封面图不能为空");
         }
         Blog blog = new Blog();

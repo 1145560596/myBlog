@@ -1,11 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6efde69-af5d-4349-9004-161b7250770e" name="Default Changelist" comment="" />
+    <list default="true" id="c6efde69-af5d-4349-9004-161b7250770e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/blog/MyBlogController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/vo/BlogDetailVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/vo/BlogListVO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/vo/SimpleBlogListVO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/config/MpConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/config/MpConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/AdminController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/AdminController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/BlogController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/BlogController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/CategoryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/CategoryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/CommentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/CommentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/ConfigController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/ConfigController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/LinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/LinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/TagController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/TagController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/entity/BlogCategory.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/entity/BlogCategory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/BlogService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/BlogService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/CommentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/CommentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/ConfigService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/ConfigService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/LinkService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/LinkService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/TagService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/TagService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/BlogServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/CategoryServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/CategoryServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/CommentServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/CommentServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/ConfigServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/ConfigServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/LinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/LinkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/TagServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/TagServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/my-blog.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/config/MpConfig.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/config/MpConfig.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/BlogController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/BlogController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/CategoryController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/CategoryController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/CommentController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/CommentController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/ConfigController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/ConfigController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/LinkController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/LinkController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/TagController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/controller/admin/TagController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/entity/BlogCategory.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/entity/BlogCategory.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/BlogService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/BlogService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/CategoryService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/CategoryService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/CommentService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/CommentService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/ConfigService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/ConfigService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/LinkService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/LinkService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/TagService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/TagService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/BlogServiceImpl$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/BlogServiceImpl$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/BlogServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/BlogServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/CategoryServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/CategoryServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/CommentServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/CommentServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/ConfigServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/ConfigServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/LinkServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/LinkServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/TagServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/service/impl/TagServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/atme/blog/utils/ResultGenerator.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/atme/blog/utils/ResultGenerator.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -31,13 +113,39 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/com/atme/blog/controller" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
-  <component name="RunManager">
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspace-idea\my-best-Blog\src\main\java\com\atme\blog\controller" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.MyBlogApplication">
+    <configuration name="MyBlogApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="my-blog" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.atme.blog.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.atme.blog" />
+      <option name="MAIN_CLASS_NAME" value="com.atme.blog.MyBlogApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MyBlogApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="my-blog" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.atme.blog.MyBlogApplication" />
@@ -45,6 +153,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.MyBlogApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -57,10 +170,171 @@
       <option name="presentableId" value="Default" />
       <updated>1616320226409</updated>
       <workItem from="1616320227732" duration="163000" />
+      <workItem from="1616320395123" duration="31229000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="470" y="116" key="#com.intellij.ide.util.MemberChooser" timestamp="1616813232170">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="470" y="116" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1616813232170" />
+    <state x="544" y="279" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1616332815236">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="544" y="279" width="448" height="273" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1616332815236" />
+    <state x="290" y="124" width="1093" height="624" key="DiffContextDialog" timestamp="1616341360513">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="290" y="124" width="1093" height="624" key="DiffContextDialog/0.0.1536.824@0.0.1536.824" timestamp="1616341360513" />
+    <state width="1138" height="275" key="GridCell.Tab.0.bottom" timestamp="1617030500415">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617030500415" />
+    <state width="1138" height="275" key="GridCell.Tab.0.center" timestamp="1617030500415">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1617030500415" />
+    <state width="1138" height="275" key="GridCell.Tab.0.left" timestamp="1617030500415">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1617030500415" />
+    <state width="1138" height="275" key="GridCell.Tab.0.right" timestamp="1617030500415">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1617030500415" />
+    <state width="1138" height="275" key="GridCell.Tab.1.bottom" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.1.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state width="1138" height="275" key="GridCell.Tab.1.center" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.1.center/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state width="1138" height="275" key="GridCell.Tab.1.left" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.1.left/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state width="1138" height="275" key="GridCell.Tab.1.right" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.1.right/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state width="1138" height="275" key="GridCell.Tab.2.bottom" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.2.bottom/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state width="1138" height="275" key="GridCell.Tab.2.center" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.2.center/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state width="1138" height="275" key="GridCell.Tab.2.left" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.2.left/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state width="1138" height="275" key="GridCell.Tab.2.right" timestamp="1617030500416">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state width="1138" height="275" key="GridCell.Tab.2.right/0.0.1536.824@0.0.1536.824" timestamp="1617030500416" />
+    <state x="119" y="92" key="SettingsEditor" timestamp="1616774699821">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="119" y="92" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1616774699821" />
+    <state x="626" y="146" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1616903650267">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="626" y="146" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1536.824@0.0.1536.824" timestamp="1616903650267" />
+    <state x="758" y="147" width="602" height="594" key="find.popup" timestamp="1616778618133">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="758" y="147" width="602" height="594" key="find.popup/0.0.1536.824@0.0.1536.824" timestamp="1616778618133" />
+    <state x="786" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1616916935721">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="786" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1616916935721" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/CategoryController.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/CategoryServiceImpl.java</url>
+          <line>52</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/TagController.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/TagController.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/TagServiceImpl.java</url>
+          <line>36</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/TagController.java</url>
+          <line>50</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/LinkController.java</url>
+          <line>89</line>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+        <line-breakpoint suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/AdminController.java</url>
+          <line>113</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/controller/admin/CommentController.java</url>
+          <line>37</line>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/CommentServiceImpl.java</url>
+          <line>33</line>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+      </breakpoints>
+      <breakpoints-defaults>
+        <breakpoint suspend="THREAD" type="java-line" />
+      </breakpoints-defaults>
+    </breakpoint-manager>
   </component>
 </project>

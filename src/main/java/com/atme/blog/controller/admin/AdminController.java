@@ -112,7 +112,7 @@ public class AdminController {
     public String updateName(@PathParam("nickName") String nickName, @PathParam("loginUserName") String loginUserName,
                              HttpServletRequest request) {
         if (StringUtils.isEmpty(nickName) || StringUtils.isEmpty(loginUserName)) {
-            return "参数不能为空";
+            return "登录名称或昵称不能为空";
         }
         Integer loginUserId = (Integer) request.getSession().getAttribute("loginUserId");
         if (adminUserService.updateName(loginUserName, nickName, loginUserId) > 0) {

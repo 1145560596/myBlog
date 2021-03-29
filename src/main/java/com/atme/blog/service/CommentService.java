@@ -1,7 +1,11 @@
 package com.atme.blog.service;
 
 import com.atme.blog.entity.BlogComment;
+import com.atme.blog.utils.PageResult;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+
+import java.util.Map;
 
 /**
  * <p>
@@ -14,4 +18,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface CommentService extends IService<BlogComment> {
 
     Integer getTotalComments();
+
+    PageResult getCommentList(Map<String, Object> params);
 }

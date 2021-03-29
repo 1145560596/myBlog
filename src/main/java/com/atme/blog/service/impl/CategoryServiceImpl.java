@@ -4,13 +4,13 @@ import com.atme.blog.entity.BlogCategory;
 import com.atme.blog.mapper.BlogCategoryMapper;
 import com.atme.blog.service.CategoryService;
 import com.atme.blog.utils.PageResult;
+import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Locale;
+import java.util.*;
 
 /**
  * <p>
@@ -30,13 +30,52 @@ public class CategoryServiceImpl extends ServiceImpl<BlogCategoryMapper, BlogCat
     }
 
     @Override
-    public PageResult getCategoryList() {
+    public PageResult getCategoryList(Map<String, Object> params) {
         Page<BlogCategory> page = new Page<>();
         QueryWrapper<BlogCategory> wrapper = new QueryWrapper<>();
+        page.setCurrent(Integer.valueOf(params.get("page").toString()));
+
         wrapper.orderByDesc("category_id");
         baseMapper.selectPage(page,wrapper);
-        PageResult pageResult = new PageResult(page.getTotal(),page.getSize(),page.getTotal(),page.getCurrent(),page.getRecords());
+
+        PageResult pageResult = new PageResult(page.getTotal(),page.getSize(),page.getPages(),page.getCurrent(),page.getRecords());
         return pageResult;
+    }
+
+    /**
+     * 保存
+     * @param categoryName
+     * @param categoryIcon
+     * @return
+     */
+    @Override
+    public Boolean saveCategory(String categoryName, String categoryIcon) {
+        QueryWrapper<BlogCategory> wrapper = new QueryWrapper<>();
+        wrapper.eq("category_name",categoryName);
+        BlogCategory one = baseMapper.selectOne(wrapper);
+
+        if(Objects.isNull(one)) {
+            BlogCategory category = new BlogCategory();
+            category.setCategoryName(categoryName);
+            category.setCategoryIcon(categoryIcon);
+            return baseMapper.insert(category) > 0;
+        }
+        return false;
+    }
+
+    @Override
+    public Integer updateCategory(Integer categoryId,String categoryName,String categoryIcon) {
+        BlogCategory blogCategory = new BlogCategory();
+        blogCategory.setCategoryId(categoryId);
+        blogCategory.setCategoryName(categoryName);
+        blogCategory.setCategoryIcon(categoryIcon);
+
+        return baseMapper.updateById(blogCategory);
+    }
+
+    @Override
+    public int deleteCategory(List<Integer> ids) {
+        return baseMapper.deleteBatchIds(ids);
     }
 
 

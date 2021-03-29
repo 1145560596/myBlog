@@ -25,4 +25,5 @@ public interface BlogService extends IService<Blog> {
 
     String update1(Blog blog);
 
+    PageResult getBlogsForIndexPage(int pageNum);
 }

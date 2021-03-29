@@ -1,6 +1,7 @@
 package com.atme.blog.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 import java.util.Date;
 import java.io.Serializable;
@@ -42,12 +43,14 @@ public class BlogCategory implements Serializable {
     /**
      * 是否删除 0=否 1=是
      */
+    @TableLogic
     private Integer isDeleted;
 
     /**
      * 创建时间
      */
     @TableField(fill = FieldFill.INSERT)
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss",timezone="GMT+8")
     private Date createTime;
 
 

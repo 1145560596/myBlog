@@ -62,6 +62,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     public PageResult getBlogList(Map<String, Object> params) {
         String keyword = (String) params.get("keyword");
         Page<Blog> page = new Page<>();
+        page.setCurrent(Integer.valueOf(params.get("page").toString()));
 
         //搜索功能
         QueryWrapper<Blog> wrapper = new QueryWrapper<>();
@@ -200,6 +201,12 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
             return "success";
         }
         return "更新失败";
+    }
+
+    @Override
+    public PageResult getBlogsForIndexPage(int pageNum) {
+
+        return null;
     }
 
 

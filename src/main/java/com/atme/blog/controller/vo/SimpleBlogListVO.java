@@ -1,4 +1,4 @@
-package com.site.blog.my.core.controller.vo;
+package com.atme.blog.controller.vo;
 
 import java.io.Serializable;
 
