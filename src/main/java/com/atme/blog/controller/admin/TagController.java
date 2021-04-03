@@ -54,7 +54,11 @@ public class TagController {
         BlogTag blogTag = new BlogTag();
         blogTag.setTagName(tagName);
 
-        return ResultGenerator.getSuccessResult(tagService.create(blogTag));
+        if(tagService.create(blogTag) == 1) {
+            return ResultGenerator.getSuccessResult();
+        } else {
+            return ResultGenerator.getFailResult("已经有该名称的标签,创建失败");
+        }
     }
 
     @PostMapping("delete")
@@ -63,7 +67,7 @@ public class TagController {
         if(CollectionUtils.isEmpty(ids)) {
             return ResultGenerator.getFailResult("请选择要删除的标签");
         }
-        if(tagService.batchDelete(ids) == ids.size()) {
+        if(tagService.batchDelete(ids) == true) {
             return ResultGenerator.getSuccessResult("删除成功");
         } else {
             return ResultGenerator.getFailResult("删除失败");

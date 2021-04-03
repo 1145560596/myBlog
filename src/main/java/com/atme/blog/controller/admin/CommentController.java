@@ -10,7 +10,11 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 /**
  * @author shkstart
@@ -41,11 +45,49 @@ public class CommentController {
         return ResultGenerator.getSuccessResult(commentService.getCommentList(params));
     }
 
-    /**
-     * 新增
-     */
-//    @PostMapping("save")
-//    public Result save(@RequestParam )
+    @PostMapping("/checkDone")
+    @ResponseBody
+    public Result checkDone(@RequestBody Integer[] ids) {
+        if (ids.length < 1) {
+            return ResultGenerator.getFailResult("参数异常！");
+        }
+        if (commentService.checkDone(ids)) {
+            return ResultGenerator.getSuccessResult();
+        } else {
+            return ResultGenerator.getFailResult("审核失败");
+        }
+    }
 
+    @PostMapping("/reply")
+    @ResponseBody
+    public Result checkDone(@RequestParam("commentId") Long commentId,
+                            @RequestParam("replyBody") String replyBody) {
+        if (commentId == null || commentId < 1 || StringUtils.isEmpty(replyBody)) {
+            return ResultGenerator.getFailResult("参数异常！");
+        }
+        if (commentService.reply(commentId, replyBody)) {
+            return ResultGenerator.getSuccessResult();
+        } else {
+            return ResultGenerator.getFailResult("回复失败");
+        }
+    }
+
+
+    @PostMapping("/delete")
+    @ResponseBody
+    public Result delete(@RequestBody Integer[] ids) {
+        if (ids.length < 1) {
+            return ResultGenerator.getFailResult("参数异常！");
+        }
+        Set<Integer> set = new HashSet<>();
+        for (Integer id : ids) {
+            set.add(id);
+        }
+        if (commentService.removeByIds(set)) {
+            return ResultGenerator.getSuccessResult();
+        } else {
+            return ResultGenerator.getFailResult("刪除失败");
+        }
+    }
 
 }

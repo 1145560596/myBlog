@@ -198,11 +198,42 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
     }
 
     @Override
+    @Transactional
+    public boolean deleteBlog(ArrayList<Integer> list) {
+        // 1.删除博客-标签关系表中的记录
+        QueryWrapper<BlogTagRelation> blogTagRelationQueryWrapper = new QueryWrapper<>();
+        blogTagRelationQueryWrapper.in("blog_id",list);
+        blogTagRelationService.remove(blogTagRelationQueryWrapper);
+
+        // 2.删除这些博客的评论
+        QueryWrapper<BlogComment> blogCommentQueryWrapper = new QueryWrapper<>();
+        blogCommentQueryWrapper.in("blog_id",list);
+        commentService.remove(blogCommentQueryWrapper);
+
+        // 3.删除博客
+        baseMapper.deleteBatchIds(list);
+        return true;
+    }
+
+    @Override
+    public BlogDetailVO getBlogDetailBySubUrl(String subUrl) {
+        QueryWrapper<Blog> wrapper = new QueryWrapper<>();
+        wrapper.eq("blog_sub_url",subUrl)
+               .eq("blog_status",1);
+
+        Blog blog = baseMapper.selectOne(wrapper);
+
+        return getBlogDetailVO(blog);
+    }
+
+
+    @Override
     public PageResult getBlogsForIndexPage(int pageNum) {
         Page<Blog> page = new Page<>();
         page.setSize(8).setCurrent(pageNum);
         QueryWrapper<Blog> wrapper = new QueryWrapper<>();
         wrapper.eq("blog_status",1);
+        wrapper.orderByDesc("blog_id");
 
         baseMapper.selectPage(page,wrapper);
         List<BlogListVO> blogListVOS = getBlogListVOsByBlogs(page.getRecords());
@@ -251,6 +282,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
             QueryWrapper<Blog> wrapper = new QueryWrapper<>();
             wrapper.like("blog_title",keyword);
             wrapper.eq("blog_status",1);
+            wrapper.orderByDesc("blog_id");
 
             baseMapper.selectPage(page,wrapper);
             List<Blog> records = page.getRecords();
@@ -291,6 +323,33 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         BlogDetailVO blogDetailVO = getBlogDetailVO(blog);
         if (blogDetailVO != null) {
             return blogDetailVO;
+        }
+        return null;
+    }
+
+    @Override
+    public PageResult getBlogsPageByTag(String tagName, Integer pageNum) {
+        if (PatternUtil.validKeyword(tagName)) {
+            BlogTag tag = tagService.selectByTagName(tagName);
+            if (tag != null && pageNum > 0) {
+
+                List<Long> blogIds = blogTagRelationService.selectBlogIdsByTagId(tag.getTagId());
+
+                QueryWrapper<Blog> wrapper = new QueryWrapper<>();
+                wrapper.in("blog_id",blogIds);
+                wrapper.orderByDesc("blog_id");
+                wrapper.eq("blog_status",1);
+
+                Page<Blog> page = new Page<>();
+                page.setCurrent(pageNum);
+                page.setSize(8);
+
+                baseMapper.selectPage(page,wrapper);
+
+                List<BlogListVO> blogListVOS = getBlogListVOsByBlogs(page.getRecords());
+                PageResult pageResult = new PageResult(page.getTotal(), page.getSize(), page.getPages(), page.getCurrent(), blogListVOS);
+                return pageResult;
+            }
         }
         return null;
     }

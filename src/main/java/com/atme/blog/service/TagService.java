@@ -26,7 +26,9 @@ public interface TagService extends IService<BlogTag> {
 
     int create(BlogTag blogTag);
 
-    int batchDelete(List<Integer> ids);
+    boolean batchDelete(List<Integer> ids);
 
     List<BlogTagCount> getBlogTagCountForIndex();
+
+    BlogTag selectByTagName(String tagName);
 }

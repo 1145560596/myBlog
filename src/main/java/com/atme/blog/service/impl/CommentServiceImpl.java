@@ -10,8 +10,10 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.CollectionUtils;
 
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -71,6 +73,32 @@ public class CommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogComme
     public Integer getTotalBlogComments(Map params) {
         List list = baseMapper.selectByMap(params);
         return list.size();
+    }
+
+    @Override
+    public Boolean addComment(BlogComment comment) {
+        return baseMapper.insert(comment) > 0;
+    }
+
+    @Override
+    public boolean checkDone(Integer[] ids) {
+        QueryWrapper<BlogComment> wrapper = new QueryWrapper<>();
+        wrapper.in("comment_id",ids);
+
+        BlogComment blogComment = new BlogComment();
+        blogComment.setCommentStatus(1);
+        return baseMapper.update(blogComment, wrapper)>0;
+    }
+
+    @Override
+    public boolean reply(Long commentId, String replyBody) {
+        QueryWrapper<BlogComment> wrapper = new QueryWrapper<>();
+        wrapper.eq("comment_id",commentId);
+
+        BlogComment blogComment = new BlogComment();
+        blogComment.setReplyBody(replyBody);
+        blogComment.setReplyCreateTime(new Date());
+        return baseMapper.update(blogComment, wrapper) == 1;
     }
 
 

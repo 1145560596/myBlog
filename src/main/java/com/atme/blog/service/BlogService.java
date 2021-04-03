@@ -7,6 +7,7 @@ import com.atme.blog.utils.PageResult;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.thymeleaf.util.StringUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -35,4 +36,10 @@ public interface BlogService extends IService<Blog> {
     List<SimpleBlogListVO> getBlogListForIndexPage(int type);
 
     BlogDetailVO getBlogDetail(Long blogId);
+
+    PageResult getBlogsPageByTag(String tagName, Integer page);
+
+    boolean deleteBlog(ArrayList<Integer> list);
+
+    BlogDetailVO getBlogDetailBySubUrl(String subUrl);
 }

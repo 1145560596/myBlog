@@ -4,13 +4,16 @@ import com.atme.blog.controller.vo.SimpleBlogListVO;
 import com.atme.blog.entity.Blog;
 import com.atme.blog.entity.BlogTag;
 import com.atme.blog.entity.BlogTagCount;
+import com.atme.blog.entity.BlogTagRelation;
 import com.atme.blog.mapper.BlogTagMapper;
+import com.atme.blog.service.BlogTagRelationService;
 import com.atme.blog.service.TagService;
 import com.atme.blog.utils.PageResult;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import org.thymeleaf.util.NumberUtils;
@@ -30,6 +33,9 @@ import java.util.Objects;
  */
 @Service
 public class TagServiceImpl extends ServiceImpl<BlogTagMapper, BlogTag> implements TagService {
+
+    @Autowired
+    private BlogTagRelationService blogTagRelationService;
 
     @Override
     public Integer getTotalTags() {
@@ -53,17 +59,37 @@ public class TagServiceImpl extends ServiceImpl<BlogTagMapper, BlogTag> implemen
 
     @Override
     public int create(BlogTag blogTag) {
-        return baseMapper.insert(blogTag);
+        QueryWrapper<BlogTag> wrapper = new QueryWrapper<>();
+        wrapper.eq("tag_name",blogTag.getTagName());
+        BlogTag tag = baseMapper.selectOne(wrapper);
+        if(Objects.isNull(tag)) {
+            return baseMapper.insert(blogTag);
+        }
+        return 0;
     }
 
     @Override
-    public int batchDelete(List<Integer> ids) {
-        return baseMapper.deleteBatchIds(ids);
+    public boolean batchDelete(List<Integer> ids) {
+        //已存在关联关系则不删除
+        List<BlogTagRelation> blogTagRelations = blogTagRelationService.selectDistinctTagIds(ids);
+
+        if (!CollectionUtils.isEmpty(blogTagRelations)) {
+            return false;
+        }
+        //删除tag
+        return baseMapper.deleteBatchIds(ids) == ids.size();
     }
 
     @Override
     public List<BlogTagCount> getBlogTagCountForIndex() {
         return baseMapper.getTagCount();
+    }
+
+    @Override
+    public BlogTag selectByTagName(String tagName) {
+        QueryWrapper<BlogTag> wrapper = new QueryWrapper<>();
+        wrapper.eq("tag_name",tagName);
+        return baseMapper.selectOne(wrapper);
     }
 
 }

@@ -24,4 +24,10 @@ public interface CommentService extends IService<BlogComment> {
     Object getCommentPageByBlogIdAndPageNum(Long blogId, Integer commentPage);
 
     Integer getTotalBlogComments(Map params);
+
+    Boolean addComment(BlogComment comment);
+
+    boolean checkDone(Integer[] ids);
+
+    boolean reply(Long commentId, String replyBody);
 }

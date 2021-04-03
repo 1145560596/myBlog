@@ -189,7 +189,7 @@ public class BlogController {
         if(ids == null || ids.length < 1) {
             return ResultGenerator.getFailResult("参数不能为空");
         }
-        if(blogService.removeByIds(list) == true) {
+        if(blogService.deleteBlog(list) == true) {
             return ResultGenerator.getSuccessResult("删除成功");
         }
         return ResultGenerator.getFailResult("删除失败");
