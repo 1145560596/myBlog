@@ -1,4 +1,4 @@
-package com.site.blog.my.core.util;
+package com.atme.blog.utils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

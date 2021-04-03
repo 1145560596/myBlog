@@ -1,10 +1,13 @@
 package com.atme.blog.service;
 
+import com.atme.blog.controller.vo.BlogDetailVO;
+import com.atme.blog.controller.vo.SimpleBlogListVO;
 import com.atme.blog.entity.Blog;
 import com.atme.blog.utils.PageResult;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.thymeleaf.util.StringUtils;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -26,4 +29,10 @@ public interface BlogService extends IService<Blog> {
     String update1(Blog blog);
 
     PageResult getBlogsForIndexPage(int pageNum);
+
+    PageResult getBlogsPageBySearch(String keyword, int page);
+
+    List<SimpleBlogListVO> getBlogListForIndexPage(int type);
+
+    BlogDetailVO getBlogDetail(Long blogId);
 }

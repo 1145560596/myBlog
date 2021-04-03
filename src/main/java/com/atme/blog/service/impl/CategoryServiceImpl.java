@@ -78,5 +78,13 @@ public class CategoryServiceImpl extends ServiceImpl<BlogCategoryMapper, BlogCat
         return baseMapper.deleteBatchIds(ids);
     }
 
+    @Override
+    public List<BlogCategory> selectBatchIds(List<Integer> ids) {
+        return baseMapper.selectBatchIds(ids);
+    }
 
+
+    public BlogCategory selectByPrimaryKey(Integer blogCategoryId) {
+        return baseMapper.selectById(blogCategoryId);
+    }
 }

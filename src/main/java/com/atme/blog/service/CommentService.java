@@ -20,4 +20,8 @@ public interface CommentService extends IService<BlogComment> {
     Integer getTotalComments();
 
     PageResult getCommentList(Map<String, Object> params);
+
+    Object getCommentPageByBlogIdAndPageNum(Long blogId, Integer commentPage);
+
+    Integer getTotalBlogComments(Map params);
 }

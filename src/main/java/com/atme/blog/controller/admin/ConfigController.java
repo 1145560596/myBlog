@@ -1,7 +1,6 @@
 package com.atme.blog.controller.admin;
 
 
-import com.atme.blog.entity.Config;
 import com.atme.blog.service.ConfigService;
 import com.atme.blog.utils.Result;
 import com.atme.blog.utils.ResultGenerator;
@@ -13,7 +12,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author testjava
+ * @author 顾文杰
  * @since 2020-10-18
  */
 @Controller

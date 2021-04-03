@@ -1,6 +1,8 @@
 package com.atme.blog.service;
 
+import com.atme.blog.entity.Blog;
 import com.atme.blog.entity.BlogTag;
+import com.atme.blog.entity.BlogTagCount;
 import com.atme.blog.utils.PageResult;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -25,4 +27,6 @@ public interface TagService extends IService<BlogTag> {
     int create(BlogTag blogTag);
 
     int batchDelete(List<Integer> ids);
+
+    List<BlogTagCount> getBlogTagCountForIndex();
 }

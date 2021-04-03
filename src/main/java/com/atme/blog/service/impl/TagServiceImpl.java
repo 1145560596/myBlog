@@ -1,15 +1,21 @@
 package com.atme.blog.service.impl;
 
+import com.atme.blog.controller.vo.SimpleBlogListVO;
+import com.atme.blog.entity.Blog;
 import com.atme.blog.entity.BlogTag;
+import com.atme.blog.entity.BlogTagCount;
 import com.atme.blog.mapper.BlogTagMapper;
 import com.atme.blog.service.TagService;
 import com.atme.blog.utils.PageResult;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import org.thymeleaf.util.NumberUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
@@ -53,6 +59,11 @@ public class TagServiceImpl extends ServiceImpl<BlogTagMapper, BlogTag> implemen
     @Override
     public int batchDelete(List<Integer> ids) {
         return baseMapper.deleteBatchIds(ids);
+    }
+
+    @Override
+    public List<BlogTagCount> getBlogTagCountForIndex() {
+        return baseMapper.getTagCount();
     }
 
 }

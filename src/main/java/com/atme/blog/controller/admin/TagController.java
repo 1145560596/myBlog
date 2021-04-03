@@ -59,7 +59,7 @@ public class TagController {
 
     @PostMapping("delete")
     @ResponseBody
-    public Result create(@RequestBody List<Integer> ids) {
+    public Result delete(@RequestBody List<Integer> ids) {
         if(CollectionUtils.isEmpty(ids)) {
             return ResultGenerator.getFailResult("请选择要删除的标签");
         }

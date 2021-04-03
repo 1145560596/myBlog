@@ -24,7 +24,7 @@ public class BlogDetailVO {
 
     private String blogContent;
 
-    private Byte enableComment;
+    private Integer enableComment;
 
     private Date createTime;
 
@@ -100,11 +100,11 @@ public class BlogDetailVO {
         this.commentCount = commentCount;
     }
 
-    public Byte getEnableComment() {
+    public Integer getEnableComment() {
         return enableComment;
     }
 
-    public void setEnableComment(Byte enableComment) {
+    public void setEnableComment(Integer enableComment) {
         this.enableComment = enableComment;
     }
 
