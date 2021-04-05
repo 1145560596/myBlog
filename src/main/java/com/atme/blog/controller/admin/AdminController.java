@@ -75,7 +75,7 @@ public class AdminController {
 
             return "redirect:/admin/index";
         } else {
-            session.setAttribute("errorMsg", "登录失败");
+            session.setAttribute("errorMsg", "用户名或密码错误");
             return "admin/login";
         }
     }

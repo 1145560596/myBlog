@@ -300,9 +300,9 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         wrapper.eq("blog_status",1)
                .last("limit 9");
         if(type == 1) {
-            wrapper.orderByDesc("blog_views");
-        } else {
             wrapper.orderByDesc("blog_id");
+        } else {
+            wrapper.orderByDesc("blog_views");
         }
 
         List<Blog> blogs = baseMapper.selectList(wrapper);
