@@ -50,6 +50,17 @@ public class MyBlogController {
     }
 
     /**
+     * 关于
+     *
+     * @return
+     */
+    @GetMapping({"about"})
+    public String about(HttpServletRequest request) {
+        return this.page(request, 1);
+    }
+
+
+    /**
      * 首页 分页数据
      *
      * @return
