@@ -50,17 +50,6 @@ public class MyBlogController {
     }
 
     /**
-     * 关于
-     *
-     * @return
-     */
-    @GetMapping({"about"})
-    public String about(HttpServletRequest request) {
-        return this.page(request, 1);
-    }
-
-
-    /**
      * 首页 分页数据
      *
      * @return
@@ -284,9 +273,10 @@ public class MyBlogController {
      * @return
      */
     @GetMapping({"/{subUrl}"})
-    public String detail(HttpServletRequest request, @PathVariable("subUrl") String subUrl) {
+    public String detail(HttpServletRequest request, @PathVariable("subUrl") String subUrl, @RequestParam(value = "commentPage", required = false, defaultValue = "1") Integer commentPage) {
         BlogDetailVO blogDetailVO = blogService.getBlogDetailBySubUrl(subUrl);
         if (blogDetailVO != null) {
+            request.setAttribute("commentPageResult", commentService.getCommentPageByBlogIdAndPageNum(blogDetailVO.getBlogId(), commentPage));
             request.setAttribute("blogDetailVO", blogDetailVO);
             request.setAttribute("pageName", subUrl);
             request.setAttribute("configurations", configService.getAllConfigs());
