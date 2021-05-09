@@ -25,7 +25,8 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/admin/tags")
-public class TagController {
+public class
+TagController {
 
     @Autowired
     private TagService tagService;
