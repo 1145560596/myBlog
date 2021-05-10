@@ -13,15 +13,15 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @author shkstart
  * @create 2020-10-19-8:48
  */
-//@Configuration
-//public class MyBlogWebMvcConfigurer implements WebMvcConfigurer {
-//
-//    @Autowired
-//    private MyAdminInterceptor myAdminInterceptor;
-//
-//    @Override
-//    public void addInterceptors(InterceptorRegistry registry) {
-//        registry.addInterceptor(myAdminInterceptor).addPathPatterns("/admin/**").excludePathPatterns("/admin/login");
-//    }
-//
-//}
+@Configuration
+public class MyBlogWebMvcConfigurer implements WebMvcConfigurer {
+
+    @Autowired
+    private MyAdminInterceptor myAdminInterceptor;
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+        registry.addInterceptor(myAdminInterceptor).addPathPatterns("/admin/**").excludePathPatterns("/admin/login");
+    }
+
+}
