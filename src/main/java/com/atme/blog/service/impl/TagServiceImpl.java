@@ -48,6 +48,8 @@ public class TagServiceImpl extends ServiceImpl<BlogTagMapper, BlogTag> implemen
 
         Page<BlogTag> page = new Page<>();
         page.setCurrent(Integer.valueOf(params.get("page").toString()));
+        page.setSize(Long.parseLong(params.get("limit").toString()));
+
         QueryWrapper<BlogTag> wrapper = new QueryWrapper<>();
         wrapper.orderByDesc("tag_id");
 

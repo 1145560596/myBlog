@@ -38,6 +38,7 @@ public class LinkServiceImpl extends ServiceImpl<LinkMapper, Link> implements Li
         Page<Link> page = new Page<>();
         QueryWrapper<Link> wrapper = new QueryWrapper<>();
         page.setCurrent(Integer.valueOf(params.get("page").toString()));
+        page.setSize(Long.parseLong(params.get("limit").toString()));
 
         wrapper.orderByDesc("create_time");
         baseMapper.selectPage(page,wrapper);

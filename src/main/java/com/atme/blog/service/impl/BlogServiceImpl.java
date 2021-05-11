@@ -12,6 +12,7 @@ import com.atme.blog.utils.MarkDownUtil;
 import com.atme.blog.utils.PageResult;
 import com.atme.blog.utils.PatternUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.UpdateWrapper;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
@@ -64,6 +65,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         String keyword = (String) params.get("keyword");
         Page<Blog> page = new Page<>();
         page.setCurrent(Integer.valueOf(params.get("page").toString()));
+        page.setSize(Long.parseLong(params.get("limit").toString()));
 
         //搜索功能
         QueryWrapper<Blog> wrapper = new QueryWrapper<>();
@@ -210,7 +212,19 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         blogCommentQueryWrapper.in("blog_id",list);
         commentService.remove(blogCommentQueryWrapper);
 
-        // 3.删除博客
+        // 3.分类数量-1
+        UpdateWrapper<BlogCategory> blogCategoryUpdateWrapper = new UpdateWrapper<>();
+
+        QueryWrapper<Blog> blogQueryWrapper = new QueryWrapper<>();
+        blogQueryWrapper.in("blog_id",list);
+        List<Blog> blogs = baseMapper.selectList(blogQueryWrapper);
+        blogs.stream().forEach(blog -> {
+            BlogCategory blogCategory = categoryService.getById(blog.getBlogCategoryId());
+            blogCategory.setCategoryRank(blogCategory.getCategoryRank()-1);
+            categoryService.updateById(blogCategory);
+        });
+
+        // 4.删除博客
         baseMapper.deleteBatchIds(list);
         return true;
     }

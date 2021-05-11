@@ -40,6 +40,7 @@ public class CommentServiceImpl extends ServiceImpl<BlogCommentMapper, BlogComme
         Page<BlogComment> page = new Page<>();
         QueryWrapper<BlogComment> wrapper = new QueryWrapper<>();
         page.setCurrent(Integer.valueOf(params.get("page").toString()));
+        page.setSize(Long.parseLong(params.get("limit").toString()));
 
         wrapper.orderByDesc("reply_create_time");
         baseMapper.selectPage(page,wrapper);

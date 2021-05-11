@@ -34,6 +34,7 @@ public class CategoryServiceImpl extends ServiceImpl<BlogCategoryMapper, BlogCat
         Page<BlogCategory> page = new Page<>();
         QueryWrapper<BlogCategory> wrapper = new QueryWrapper<>();
         page.setCurrent(Integer.valueOf(params.get("page").toString()));
+        page.setSize(Long.parseLong(params.get("limit").toString()));
 
         wrapper.orderByDesc("category_id");
         baseMapper.selectPage(page,wrapper);
