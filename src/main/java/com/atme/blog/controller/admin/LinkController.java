@@ -46,6 +46,7 @@ public class LinkController {
      * 友链添加
      */
     @PostMapping("/save")
+    @ResponseBody
     public Result add(@RequestParam("linkType") Integer linkType,
                       @RequestParam("linkName") String linkName,
                       @RequestParam("linkUrl") String linkUrl,
