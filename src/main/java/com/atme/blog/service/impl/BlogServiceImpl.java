@@ -212,7 +212,7 @@ public class BlogServiceImpl extends ServiceImpl<BlogMapper, Blog> implements Bl
         blogCommentQueryWrapper.in("blog_id",list);
         commentService.remove(blogCommentQueryWrapper);
 
-        // 3.分类数量-1
+        // 3.分类引用数量-1
         UpdateWrapper<BlogCategory> blogCategoryUpdateWrapper = new UpdateWrapper<>();
 
         QueryWrapper<Blog> blogQueryWrapper = new QueryWrapper<>();
