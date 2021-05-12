@@ -1,14 +1,18 @@
 package com.atme.blog.service.impl;
 
+import com.atme.blog.entity.Blog;
 import com.atme.blog.entity.BlogCategory;
 import com.atme.blog.mapper.BlogCategoryMapper;
+import com.atme.blog.service.BlogService;
 import com.atme.blog.service.CategoryService;
 import com.atme.blog.utils.PageResult;
 import com.baomidou.mybatisplus.core.conditions.Wrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 
 import java.util.*;
 
@@ -22,6 +26,9 @@ import java.util.*;
  */
 @Service
 public class CategoryServiceImpl extends ServiceImpl<BlogCategoryMapper, BlogCategory> implements CategoryService {
+
+    @Autowired
+    private BlogService blogService;
 
     @Override
     public Integer getTotalCategories() {
@@ -75,8 +82,20 @@ public class CategoryServiceImpl extends ServiceImpl<BlogCategoryMapper, BlogCat
     }
 
     @Override
-    public int deleteCategory(List<Integer> ids) {
-        return baseMapper.deleteBatchIds(ids);
+    public List<BlogCategory> deleteCategory(List<Integer> ids) {
+        List<BlogCategory> blogCategories = baseMapper.selectBatchIds(ids);
+        List<BlogCategory> errorRecords = new ArrayList<>();
+        for (BlogCategory blogCategory : blogCategories) {
+            if(blogCategory.getCategoryRank().byteValue() != 0) {
+                errorRecords.add(blogCategory);
+            } else {
+                baseMapper.deleteById(blogCategory.getCategoryId());
+            }
+        }
+        if (!CollectionUtils.isEmpty(errorRecords)) {
+            return errorRecords;
+        }
+        return new ArrayList<>();
     }
 
     @Override

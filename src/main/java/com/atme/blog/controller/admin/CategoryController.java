@@ -1,5 +1,6 @@
 package com.atme.blog.controller.admin;
 
+import com.atme.blog.entity.BlogCategory;
 import com.atme.blog.service.CategoryService;
 import com.atme.blog.utils.Result;
 import com.atme.blog.utils.ResultGenerator;
@@ -12,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @author 顾文杰
@@ -87,10 +89,21 @@ public class CategoryController {
         if (CollectionUtils.isEmpty(ids)) {
             return ResultGenerator.getFailResult("请选择要删除的分类！");
         }
-        if (categoryService.deleteCategory(ids) == ids.size()) {
+        List<BlogCategory> blogCategories = categoryService.deleteCategory(ids);
+        if (CollectionUtils.isEmpty(blogCategories)) {
             return ResultGenerator.getSuccessResult();
         } else {
-            return ResultGenerator.getFailResult("删除失败");
+            StringBuilder stringBuilder = new StringBuilder();
+            int size = blogCategories.size();
+            AtomicInteger num = new AtomicInteger();
+            blogCategories.stream().forEach(blogCategory -> {
+                stringBuilder.append(blogCategory.getCategoryName());
+                num.getAndIncrement();
+                if(num.get() != size) {
+                    stringBuilder.append("、");
+                }
+            });
+            return ResultGenerator.getFailResult("分类：“"+ stringBuilder + "” 被文章所引用，请先删除文章");
         }
     }
 

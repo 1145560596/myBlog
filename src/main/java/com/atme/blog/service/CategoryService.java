@@ -25,7 +25,7 @@ public interface CategoryService extends IService<BlogCategory> {
 
     Integer updateCategory(Integer categoryId,String categoryName,String categoryIcon);
 
-    int deleteCategory(List<Integer> ids);
+    List<BlogCategory> deleteCategory(List<Integer> ids);
 
     List<BlogCategory> selectBatchIds(List<Integer> ids);
 

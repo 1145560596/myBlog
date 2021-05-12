@@ -148,7 +148,7 @@ function deleteCagegory() {
                     data: JSON.stringify(ids),
                     success: function (r) {
                         if (r.resultCode == 200) {
-                            swal("删除成功", {
+                            swal("s", {
                                 icon: "success",
                             });
                             $("#jqGrid").trigger("reloadGrid");
@@ -156,6 +156,7 @@ function deleteCagegory() {
                             swal(r.message, {
                                 icon: "error",
                             });
+                            $("#jqGrid").trigger("reloadGrid");
                         }
                     }
                 });
