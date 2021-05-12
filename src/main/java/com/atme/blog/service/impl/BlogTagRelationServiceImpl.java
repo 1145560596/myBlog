@@ -29,6 +29,9 @@ public class BlogTagRelationServiceImpl extends ServiceImpl<BlogTagRelationMappe
 
     @Override
     public List<BlogTagRelation> selectDistinctTagIds(List<Integer> ids) {
-        return baseMapper.selectBatchIds(ids);
+        QueryWrapper<BlogTagRelation> wrapper = new QueryWrapper<>();
+        wrapper.in("tag_id",ids);
+        List<BlogTagRelation> blogTagRelations = baseMapper.selectList(wrapper);
+        return blogTagRelations;
     }
 }

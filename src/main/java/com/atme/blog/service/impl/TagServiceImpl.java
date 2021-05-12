@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 /**
  * <p>
@@ -71,15 +72,21 @@ public class TagServiceImpl extends ServiceImpl<BlogTagMapper, BlogTag> implemen
     }
 
     @Override
-    public boolean batchDelete(List<Integer> ids) {
+    public List<BlogTag> batchDelete(List<Integer> ids) {
         //已存在关联关系则不删除
         List<BlogTagRelation> blogTagRelations = blogTagRelationService.selectDistinctTagIds(ids);
+        QueryWrapper<BlogTag> wrapper = new QueryWrapper<>();
+        List<Integer> list = blogTagRelations.stream().map(BlogTagRelation::getTagId).collect(Collectors.toList());
 
-        if (!CollectionUtils.isEmpty(blogTagRelations)) {
-            return false;
+        wrapper.in("tag_id",list);
+        List<BlogTag> errorRecords = baseMapper.selectList(wrapper);
+
+        ids.removeAll(list);
+        if(!CollectionUtils.isEmpty(ids)) {
+            baseMapper.deleteBatchIds(ids);
         }
-        //删除tag
-        return baseMapper.deleteBatchIds(ids) == ids.size();
+
+        return errorRecords;
     }
 
     @Override

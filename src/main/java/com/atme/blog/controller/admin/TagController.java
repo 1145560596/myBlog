@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * <p>
@@ -67,10 +68,21 @@ public class TagController {
         if(CollectionUtils.isEmpty(ids)) {
             return ResultGenerator.getFailResult("请选择要删除的标签");
         }
-        if(tagService.batchDelete(ids) == true) {
+        List<BlogTag> blogTags = tagService.batchDelete(ids);
+        if(CollectionUtils.isEmpty(blogTags)) {
             return ResultGenerator.getSuccessResult("删除成功");
         } else {
-            return ResultGenerator.getFailResult("删除失败");
+            StringBuilder stringBuilder = new StringBuilder();
+            int size = blogTags.size();
+            AtomicInteger num = new AtomicInteger();
+            blogTags.stream().forEach(blogTag -> {
+                stringBuilder.append(blogTag.getTagName());
+                num.getAndIncrement();
+                if(num.get() != size) {
+                    stringBuilder.append("、");
+                }
+            });
+            return ResultGenerator.getFailResult("标签：“"+ stringBuilder + "” 被文章所引用，请先删除文章");
         }
     }
 
