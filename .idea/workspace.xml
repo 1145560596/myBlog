@@ -25,7 +25,9 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c6efde69-af5d-4349-9004-161b7250770e" name="Default Changelist" comment="feat:。。。" />
+    <list default="true" id="c6efde69-af5d-4349-9004-161b7250770e" name="Default Changelist" comment="feat:。。。">
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/BlogServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/atme/blog/service/impl/BlogServiceImpl.java" afterDir="false" />
+    </list>
     <list id="678e42a5-91ed-4494-b10a-6eeaa6f9fc44" name="ssss" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
