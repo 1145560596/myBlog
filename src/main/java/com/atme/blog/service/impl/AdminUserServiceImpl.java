@@ -25,7 +25,7 @@ public class AdminUserServiceImpl extends ServiceImpl<AdminUserMapper, AdminUser
     @Override
     public AdminUser login(String userName, String password) {
         String md5Encode = MD5Util.MD5Encode(password, "utf-8");
-
+        //sad
         QueryWrapper<AdminUser> wrapper = new QueryWrapper<>();
         wrapper.eq("login_user_name",userName);
         wrapper.eq("login_password",md5Encode);
